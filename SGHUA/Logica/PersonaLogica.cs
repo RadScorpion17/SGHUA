@@ -54,7 +54,7 @@ namespace SGHUA.Logica
             using (SQLiteConnection conexion = new SQLiteConnection(cadena))
             {
                 conexion.Open();
-                string query = "select * from Persona";
+                string query = "select IdPersona,Nombre,Apellido,Telefono from Persona";
                 SQLiteCommand cmd = new SQLiteCommand(query, conexion);
                 cmd.CommandType = System.Data.CommandType.Text;
 

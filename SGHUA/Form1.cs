@@ -16,8 +16,8 @@ namespace SGHUA
         {
             Persona objeto = new Persona()
             {
-                Nombre = txttelefono.Text,
-                Apellido = txttelefono.Text,
+                Nombre = txtnombre.Text,
+                Apellido = txtapellido.Text,
                 Telefono = txttelefono.Text,
             };
             bool respuesta = PersonaLogica.Instancia.Guardar(objeto);

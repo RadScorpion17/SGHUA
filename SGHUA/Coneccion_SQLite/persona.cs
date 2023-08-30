@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SGHUA.Coneccion_Sqlite
+namespace SGHUA.Coneccion_SQLite
 {
     public class Persona
     {

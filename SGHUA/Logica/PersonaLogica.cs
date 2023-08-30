@@ -4,7 +4,7 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SGHUA.Coneccion_Sqlite;
+using SGHUA.Coneccion_SQLite;
 using System.Data.SQLite;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 

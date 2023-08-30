@@ -1,4 +1,4 @@
-using SGHUA.Coneccion_Sqlite;
+using SGHUA.Coneccion_SQLite;
 using SGHUA.Logica;
 namespace SGHUA
 
@@ -11,7 +11,7 @@ namespace SGHUA
             InitializeComponent();
         }
 
-       
+
         private void btnguardar_Click(object sender, EventArgs e)
         {
             Persona objeto = new Persona()
@@ -21,15 +21,21 @@ namespace SGHUA
                 Telefono = txttelefono.Text,
             };
             bool respuesta = PersonaLogica.Instancia.Guardar(objeto);
-            if (respuesta) {
+            if (respuesta)
+            {
                 mostrar_personas();
             }
         }
 
-      public void mostrar_personas()
+        public void mostrar_personas()
         {
             dgvpersonas.DataSource = null;
             dgvpersonas.DataSource = PersonaLogica.Instancia.Listar();
+        }
+
+        private void dgvpersonas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            mostrar_personas();
         }
     }
 }

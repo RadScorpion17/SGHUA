@@ -51,7 +51,6 @@
             Idpersona.Size = new Size(59, 15);
             Idpersona.TabIndex = 0;
             Idpersona.Text = "Idpersona";
-        
             // 
             // Nombre
             // 
@@ -107,7 +106,6 @@
             txttelefono.Name = "txttelefono";
             txttelefono.Size = new Size(100, 23);
             txttelefono.TabIndex = 7;
-            //txttelefono.TextChanged += txttelefono_TextChanged;
             // 
             // btnguardar
             // 
@@ -127,7 +125,6 @@
             btneditar.TabIndex = 9;
             btneditar.Text = "editar";
             btneditar.UseVisualStyleBackColor = true;
-          //  btneditar.Click += btneditar_Click;
             // 
             // btnelimiar
             // 
@@ -137,7 +134,6 @@
             btnelimiar.TabIndex = 10;
             btnelimiar.Text = "eliminar";
             btnelimiar.UseVisualStyleBackColor = true;
-            //btnelimiar.Click += btnelimiar_Click;
             // 
             // dgvpersonas
             // 
@@ -147,6 +143,7 @@
             dgvpersonas.RowTemplate.Height = 25;
             dgvpersonas.Size = new Size(523, 246);
             dgvpersonas.TabIndex = 11;
+            dgvpersonas.CellContentClick += dgvpersonas_CellContentClick;
             // 
             // Form1
             // 

@@ -46,77 +46,72 @@
             // Idpersona
             // 
             Idpersona.AutoSize = true;
-            Idpersona.Location = new Point(57, 92);
+            Idpersona.Location = new Point(50, 69);
             Idpersona.Name = "Idpersona";
-            Idpersona.Size = new Size(75, 20);
+            Idpersona.Size = new Size(59, 15);
             Idpersona.TabIndex = 0;
             Idpersona.Text = "Idpersona";
             // 
             // Nombre
             // 
             Nombre.AutoSize = true;
-            Nombre.Location = new Point(274, 92);
+            Nombre.Location = new Point(240, 69);
             Nombre.Name = "Nombre";
-            Nombre.Size = new Size(64, 20);
+            Nombre.Size = new Size(51, 15);
             Nombre.TabIndex = 1;
             Nombre.Text = "Nombre";
             // 
             // Apellido
             // 
             Apellido.AutoSize = true;
-            Apellido.Location = new Point(463, 92);
+            Apellido.Location = new Point(405, 69);
             Apellido.Name = "Apellido";
-            Apellido.Size = new Size(66, 20);
+            Apellido.Size = new Size(51, 15);
             Apellido.TabIndex = 2;
             Apellido.Text = "Apellido";
             // 
             // telefono
             // 
             telefono.AutoSize = true;
-            telefono.Location = new Point(702, 92);
+            telefono.Location = new Point(614, 69);
             telefono.Name = "telefono";
-            telefono.Size = new Size(65, 20);
+            telefono.Size = new Size(51, 15);
             telefono.TabIndex = 3;
             telefono.Text = "telefono";
             // 
             // txtidpersona
             // 
-            txtidpersona.Location = new Point(35, 116);
-            txtidpersona.Margin = new Padding(3, 4, 3, 4);
+            txtidpersona.Location = new Point(31, 87);
             txtidpersona.Name = "txtidpersona";
-            txtidpersona.Size = new Size(114, 27);
+            txtidpersona.Size = new Size(100, 23);
             txtidpersona.TabIndex = 4;
             // 
             // txtnombre
             // 
-            txtnombre.Location = new Point(247, 116);
-            txtnombre.Margin = new Padding(3, 4, 3, 4);
+            txtnombre.Location = new Point(216, 87);
             txtnombre.Name = "txtnombre";
-            txtnombre.Size = new Size(114, 27);
+            txtnombre.Size = new Size(100, 23);
             txtnombre.TabIndex = 5;
             // 
             // txtapellido
             // 
-            txtapellido.Location = new Point(437, 116);
-            txtapellido.Margin = new Padding(3, 4, 3, 4);
+            txtapellido.Location = new Point(382, 87);
             txtapellido.Name = "txtapellido";
-            txtapellido.Size = new Size(114, 27);
+            txtapellido.Size = new Size(100, 23);
             txtapellido.TabIndex = 6;
             // 
             // txttelefono
             // 
-            txttelefono.Location = new Point(670, 116);
-            txttelefono.Margin = new Padding(3, 4, 3, 4);
+            txttelefono.Location = new Point(586, 87);
             txttelefono.Name = "txttelefono";
-            txttelefono.Size = new Size(114, 27);
+            txttelefono.Size = new Size(100, 23);
             txttelefono.TabIndex = 7;
             // 
             // btnguardar
             // 
-            btnguardar.Location = new Point(146, 195);
-            btnguardar.Margin = new Padding(3, 4, 3, 4);
+            btnguardar.Location = new Point(128, 146);
             btnguardar.Name = "btnguardar";
-            btnguardar.Size = new Size(86, 31);
+            btnguardar.Size = new Size(75, 23);
             btnguardar.TabIndex = 8;
             btnguardar.Text = "guardar";
             btnguardar.UseVisualStyleBackColor = true;
@@ -124,20 +119,18 @@
             // 
             // btneditar
             // 
-            btneditar.Location = new Point(362, 195);
-            btneditar.Margin = new Padding(3, 4, 3, 4);
+            btneditar.Location = new Point(317, 146);
             btneditar.Name = "btneditar";
-            btneditar.Size = new Size(86, 31);
+            btneditar.Size = new Size(75, 23);
             btneditar.TabIndex = 9;
             btneditar.Text = "editar";
             btneditar.UseVisualStyleBackColor = true;
             // 
             // btnelimiar
             // 
-            btnelimiar.Location = new Point(574, 195);
-            btnelimiar.Margin = new Padding(3, 4, 3, 4);
+            btnelimiar.Location = new Point(502, 146);
             btnelimiar.Name = "btnelimiar";
-            btnelimiar.Size = new Size(86, 31);
+            btnelimiar.Size = new Size(75, 23);
             btnelimiar.TabIndex = 10;
             btnelimiar.Text = "eliminar";
             btnelimiar.UseVisualStyleBackColor = true;
@@ -145,20 +138,19 @@
             // dgvpersonas
             // 
             dgvpersonas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvpersonas.Location = new Point(134, 256);
-            dgvpersonas.Margin = new Padding(3, 4, 3, 4);
+            dgvpersonas.Location = new Point(117, 192);
             dgvpersonas.Name = "dgvpersonas";
             dgvpersonas.RowHeadersWidth = 51;
             dgvpersonas.RowTemplate.Height = 25;
-            dgvpersonas.Size = new Size(598, 328);
+            dgvpersonas.Size = new Size(523, 246);
             dgvpersonas.TabIndex = 11;
             dgvpersonas.CellContentClick += dgvpersonas_CellContentClick;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(870, 563);
+            ClientSize = new Size(761, 422);
             Controls.Add(dgvpersonas);
             Controls.Add(btnelimiar);
             Controls.Add(btneditar);
@@ -171,9 +163,9 @@
             Controls.Add(Apellido);
             Controls.Add(Nombre);
             Controls.Add(Idpersona);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dgvpersonas).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -34,11 +34,11 @@ namespace SGHUA.Logica
 
             using (SQLiteConnection conexion = new SQLiteConnection(cadena)) {
                 conexion.Open();
-                string query = "INSERT INTO Persona(Nombre,Apellido,Telefono) values (@Nombre,@Apellido,@Telefono)";
+                string query = "INSERT INTO Persona(Nombre,Apellido,Telefono) values (@nombre,@apellido,@telefono)";
                 SQLiteCommand cmd = new SQLiteCommand(query, conexion);
-                cmd.Parameters.Add(new SQLiteParameter("@Nombre", obj.Nombre));
-                cmd.Parameters.Add(new SQLiteParameter("@Apellido", obj.Apellido));
-                cmd.Parameters.Add(new SQLiteParameter("@Telefono", obj.Telefono));
+                cmd.Parameters.Add(new SQLiteParameter("@nombre", obj.Nombre));
+                cmd.Parameters.Add(new SQLiteParameter("@apellido", obj.Apellido));
+                cmd.Parameters.Add(new SQLiteParameter("@telefono", obj.Telefono));
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 if (cmd.ExecuteNonQuery() < 1) {
@@ -54,9 +54,9 @@ namespace SGHUA.Logica
             using (SQLiteConnection conexion = new SQLiteConnection(cadena))
             {
                 conexion.Open();
-                string query = "select IdPersona,Nombre,Apellido,Telefono from Persona";
+                string query = "SELECT IdPersona,Nombre,Apellido,Telefono from Persona";
                 SQLiteCommand cmd = new SQLiteCommand(query, conexion);
-                cmd.CommandType = System.Data.CommandType.Text;
+                               cmd.CommandType = System.Data.CommandType.Text;
 
                 using (SQLiteDataReader dr = cmd.ExecuteReader()) 
                 {

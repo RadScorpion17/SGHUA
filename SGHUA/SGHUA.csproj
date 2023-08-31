@@ -14,13 +14,42 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="bin\Debug\net7.0-windows\SGHUA.deps.json" />
+    <Content Include="bin\Debug\net7.0-windows\SGHUA.runtimeconfig.json" />
     <Content Include="ProyectoDB.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="bin\Debug\net7.0-windows\EntityFramework.dll" />
+    <None Include="bin\Debug\net7.0-windows\EntityFramework.SqlServer.dll" />
+    <None Include="bin\Debug\net7.0-windows\ProyectoDB.db" />
+    <None Include="bin\Debug\net7.0-windows\runtimes\linux-x64\native\SQLite.Interop.dll" />
+    <None Include="bin\Debug\net7.0-windows\runtimes\osx-x64\native\SQLite.Interop.dll" />
+    <None Include="bin\Debug\net7.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll" />
+    <None Include="bin\Debug\net7.0-windows\runtimes\win-arm64\native\sni.dll" />
+    <None Include="bin\Debug\net7.0-windows\runtimes\win-x64\native\sni.dll" />
+    <None Include="bin\Debug\net7.0-windows\runtimes\win-x64\native\SQLite.Interop.dll" />
+    <None Include="bin\Debug\net7.0-windows\runtimes\win-x86\native\sni.dll" />
+    <None Include="bin\Debug\net7.0-windows\runtimes\win-x86\native\SQLite.Interop.dll" />
+    <None Include="bin\Debug\net7.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll" />
+    <None Include="bin\Debug\net7.0-windows\SGHUA.dll" />
+    <None Include="bin\Debug\net7.0-windows\SGHUA.dll.config" />
+    <None Include="bin\Debug\net7.0-windows\SGHUA.exe" />
+    <None Include="bin\Debug\net7.0-windows\SGHUA.pdb" />
+    <None Include="bin\Debug\net7.0-windows\System.Data.SqlClient.dll" />
+    <None Include="bin\Debug\net7.0-windows\System.Data.SQLite.dll" />
+    <None Include="bin\Debug\net7.0-windows\System.Data.SQLite.EF6.dll" />
+    <None Include="bin\Debug\SGHUA.1.0.0.nupkg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.Data.SQLite" Version="1.0.118" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\Release\net7.0-windows\" />
   </ItemGroup>
 
 </Project>

@@ -23,6 +23,7 @@ namespace SGHUA
             bool respuesta = PersonaLogica.Instancia.Guardar(objeto);
             if (respuesta)
             {
+                limpiar();
                 mostrar_personas();
             }
         }
@@ -34,6 +35,19 @@ namespace SGHUA
         }
 
         private void dgvpersonas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            mostrar_personas();
+        }
+
+        public void limpiar()
+        {
+            txtidpersona.Text = "";
+            txtnombre.Text = "";
+            txtapellido.Text = "";
+            txttelefono.Text = "";
+            txtnombre.Focus();
+        }
+        private void Form1_Load(object sender, EventArgs e)
         {
             mostrar_personas();
         }

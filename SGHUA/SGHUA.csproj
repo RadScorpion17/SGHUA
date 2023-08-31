@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <Content Include="ProyectoDB.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 

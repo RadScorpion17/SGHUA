@@ -34,11 +34,11 @@ namespace SGHUA.Logica
 
             using (SQLiteConnection conexion = new SQLiteConnection(cadena)) {
                 conexion.Open();
-                string query = "Insert into Persona(Nombre,Apellido,Telefono) values (@nombre,@apellido,@telefono)";
+                string query = "INSERT INTO Persona(Nombre,Apellido,Telefono) values (@Nombre,@Apellido,@Telefono)";
                 SQLiteCommand cmd = new SQLiteCommand(query, conexion);
-                cmd.Parameters.Add(new SQLiteParameter("@nombre", obj.Nombre));
-                cmd.Parameters.Add(new SQLiteParameter("@apellido", obj.Apellido));
-                cmd.Parameters.Add(new SQLiteParameter("@telefono", obj.Telefono));
+                cmd.Parameters.Add(new SQLiteParameter("@Nombre", obj.Nombre));
+                cmd.Parameters.Add(new SQLiteParameter("@Apellido", obj.Apellido));
+                cmd.Parameters.Add(new SQLiteParameter("@Telefono", obj.Telefono));
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 if (cmd.ExecuteNonQuery() < 1) {
@@ -66,7 +66,7 @@ namespace SGHUA.Logica
 
                         olista.Add(new Persona()
                         {
-                            idPersona = int.Parse(dr["idPersona"].ToString()),
+                            IdPersona = int.Parse(dr["IdPersona"].ToString()),
                             Nombre = dr["Nombre"].ToString(),
                             Apellido = dr["Apellido"].ToString(),
                             Telefono = dr["Telefono"].ToString(),

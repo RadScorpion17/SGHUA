@@ -51,5 +51,38 @@ namespace SGHUA
         {
             mostrar_personas();
         }
+
+        private void btneditar_Click(object sender, EventArgs e)
+        {
+            Persona objeto = new Persona()
+            {
+                IdPersona = int.Parse(txtidpersona.Text),
+                Nombre = txtnombre.Text,
+                Apellido = txtapellido.Text,
+                Telefono = txttelefono.Text,
+            };
+            bool respuesta = PersonaLogica.Instancia.Editar(objeto);
+            if (respuesta)
+            {
+                limpiar();
+                mostrar_personas();
+            }
+        }
+
+        private void btnelimiar_Click(object sender, EventArgs e)
+        {
+            Persona objeto = new Persona()
+            {
+                IdPersona = int.Parse(txtidpersona.Text),
+             
+            };
+            bool respuesta = PersonaLogica.Instancia.Eliminar(objeto);
+            if (respuesta)
+            {
+                limpiar();
+                mostrar_personas();
+            }
+
+        }
     }
 }

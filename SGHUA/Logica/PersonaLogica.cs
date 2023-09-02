@@ -81,6 +81,53 @@ namespace SGHUA.Logica
             return olista;
         }
 
+
+        public bool Editar(Persona obj)
+        {
+
+            bool respuesta = true;
+
+            using (SQLiteConnection conexion = new SQLiteConnection(cadena))
+            {
+                conexion.Open();
+                string query = "UPDATE Persona set Nombre=@nombre, Apellido=@apellido ,Telefono=@telefono where IdPersona = @idpersona";
+                SQLiteCommand cmd = new SQLiteCommand(query, conexion);
+                cmd.Parameters.Add(new SQLiteParameter("@idpersona", obj.IdPersona));
+                cmd.Parameters.Add(new SQLiteParameter("@nombre", obj.Nombre));
+                cmd.Parameters.Add(new SQLiteParameter("@apellido", obj.Apellido));
+                cmd.Parameters.Add(new SQLiteParameter("@telefono", obj.Telefono));
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                if (cmd.ExecuteNonQuery() < 1)
+                {
+                    respuesta = false;
+                }
+            }
+            return respuesta;
+        }
+
+
+        public bool Eliminar(Persona obj)
+        {
+
+            bool respuesta = true;
+
+            using (SQLiteConnection conexion = new SQLiteConnection(cadena))
+            {
+                conexion.Open();
+                string query = "DELETE FROM Persona where IdPersona = @idpersona";
+                SQLiteCommand cmd = new SQLiteCommand(query, conexion);
+                cmd.Parameters.Add(new SQLiteParameter("@idpersona", obj.IdPersona));
+             cmd.CommandType = System.Data.CommandType.Text;
+
+                if (cmd.ExecuteNonQuery() < 1)
+                {
+                    respuesta = false;
+                }
+            }
+            return respuesta;
+        }
+
     }
 }
 

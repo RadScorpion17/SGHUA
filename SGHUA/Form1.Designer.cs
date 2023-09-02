@@ -125,6 +125,7 @@
             btneditar.TabIndex = 9;
             btneditar.Text = "editar";
             btneditar.UseVisualStyleBackColor = true;
+            btneditar.Click += btneditar_Click;
             // 
             // btnelimiar
             // 
@@ -134,6 +135,7 @@
             btnelimiar.TabIndex = 10;
             btnelimiar.Text = "eliminar";
             btnelimiar.UseVisualStyleBackColor = true;
+            btnelimiar.Click += btnelimiar_Click;
             // 
             // dgvpersonas
             // 

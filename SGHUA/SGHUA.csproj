@@ -14,8 +14,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="obj\Debug\net7.0-windows\.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\net7.0-windows\SGHUA.AssemblyInfo.cs" />
+    <Compile Include="obj\Debug\net7.0-windows\SGHUA.GlobalUsings.g.cs" />
+    <Compile Include="obj\Release\net7.0-windows\.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" />
+    <Compile Include="obj\Release\net7.0-windows\SGHUA.AssemblyInfo.cs" />
+    <Compile Include="obj\Release\net7.0-windows\SGHUA.GlobalUsings.g.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="bin\Debug\net7.0-windows\SGHUA.deps.json" />
     <Content Include="bin\Debug\net7.0-windows\SGHUA.runtimeconfig.json" />
+    <Content Include="obj\Debug\net7.0-windows\SGHUA.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\net7.0-windows\SGHUA.designer.deps.json" />
+    <Content Include="obj\Debug\net7.0-windows\SGHUA.designer.runtimeconfig.json" />
+    <Content Include="obj\project.assets.json" />
+    <Content Include="obj\SGHUA.csproj.nuget.dgspec.json" />
     <Content Include="ProyectoDB.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -42,6 +56,29 @@
     <None Include="bin\Debug\net7.0-windows\System.Data.SQLite.dll" />
     <None Include="bin\Debug\net7.0-windows\System.Data.SQLite.EF6.dll" />
     <None Include="bin\Debug\SGHUA.1.0.0.nupkg" />
+    <None Include="obj\Debug\net7.0-windows\apphost.exe" />
+    <None Include="obj\Debug\net7.0-windows\refint\SGHUA.dll" />
+    <None Include="obj\Debug\net7.0-windows\ref\SGHUA.dll" />
+    <None Include="obj\Debug\net7.0-windows\SGHUA.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\net7.0-windows\SGHUA.assets.cache" />
+    <None Include="obj\Debug\net7.0-windows\SGHUA.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\net7.0-windows\SGHUA.csproj.BuildWithSkipAnalyzers" />
+    <None Include="obj\Debug\net7.0-windows\SGHUA.csproj.CopyComplete" />
+    <None Include="obj\Debug\net7.0-windows\SGHUA.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\net7.0-windows\SGHUA.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\net7.0-windows\SGHUA.dll" />
+    <None Include="obj\Debug\net7.0-windows\SGHUA.Form1.resources" />
+    <None Include="obj\Debug\net7.0-windows\SGHUA.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\Debug\net7.0-windows\SGHUA.genruntimeconfig.cache" />
+    <None Include="obj\Debug\net7.0-windows\SGHUA.pdb" />
+    <None Include="obj\Debug\SGHUA.1.0.0.nuspec" />
+    <None Include="obj\project.nuget.cache" />
+    <None Include="obj\Release\net7.0-windows\SGHUA.AssemblyInfoInputs.cache" />
+    <None Include="obj\Release\net7.0-windows\SGHUA.assets.cache" />
+    <None Include="obj\Release\net7.0-windows\SGHUA.csproj.AssemblyReference.cache" />
+    <None Include="obj\Release\net7.0-windows\SGHUA.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\SGHUA.csproj.nuget.g.props" />
+    <None Include="obj\SGHUA.csproj.nuget.g.targets" />
   </ItemGroup>
 
   <ItemGroup>
@@ -50,6 +87,9 @@
 
   <ItemGroup>
     <Folder Include="bin\Release\net7.0-windows\" />
+    <Folder Include="obj\Release\net7.0-windows\refint\" />
+    <Folder Include="obj\Release\net7.0-windows\ref\" />
+    <Folder Include="Properties\" />
   </ItemGroup>
 
 </Project>

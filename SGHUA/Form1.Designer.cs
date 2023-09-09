@@ -172,18 +172,5 @@
         }
 
         #endregion
-
-        private Label Idpersona;
-        private Label Nombre;
-        private Label Apellido;
-        private Label telefono;
-        private TextBox txtidpersona;
-        private TextBox txtnombre;
-        private TextBox txtapellido;
-        private TextBox txttelefono;
-        private Button btnguardar;
-        private Button btneditar;
-        private Button btnelimiar;
-        private DataGridView dgvpersonas;
     }
 }

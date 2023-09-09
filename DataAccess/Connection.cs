@@ -8,7 +8,7 @@ namespace DataAccess
 
         public Connection()
         {
-            var = "Host=localhost;Username=postgres;Password=258017;Database=SGHUA";
+            var = "Host=localhost;Username=postgres;Password=;Database=";
         }
 
         protected NpgsqlConnection GetConnection()

@@ -28,10 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            SuspendLayout();
+            // 
+            // AdminForm
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Text = "Form2";
+            ClientSize = new Size(1448, 618);
+            Name = "AdminForm";
+            Text = "AdminForm";
+            ResumeLayout(false);
         }
 
         #endregion

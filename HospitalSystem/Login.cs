@@ -64,12 +64,13 @@ namespace HospitalSystem
                     var validLogin = user.LoginUser(UsernameBox.Text, PasswordBox.Text);
                     if (validLogin == true)
                     {
-                        MainForm mainmenu = new MainForm();
-                        MessageBox.Show("Bienvenido" + ActiveUser.Nombre + " " + ActiveUser.Apellido);
-                        mainmenu.Show();
-                        mainmenu.FormClosed += Logout;
-                        this.Hide();
-                    }
+                            MainForm mainForm = new MainForm();
+                            MessageBox.Show("Exito!");
+                            mainForm.Show();
+                            mainForm.FormClosed += Logout;
+                            this.Hide();
+                        }
+                    
                     else
                     {
                         msgError("Incorrect username or password entered. \n   Please try again.");
@@ -91,6 +92,16 @@ namespace HospitalSystem
         private void msgError(string msg)
         {
             MessageBox.Show(msg);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void IniciarSesionTag_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -10,6 +10,8 @@ using Npgsql;
 
 namespace DataAccess
 {
+    //Data access object encargada de separar las clase abstracta del modelo y la conexión a la BD
+    //Reutilizable
     public class UserDao : Connection
     {
         public bool Login(string user, string password)
@@ -31,11 +33,15 @@ namespace DataAccess
                         {
                             ActiveUser.IdUser = reader.GetInt32(0);
                             ActiveUser.UserName = reader.GetString(1);
-                            ActiveUser.Password = reader.GetString(6);
-                            ActiveUser.Nombre = reader.GetString(2);
-                            ActiveUser.Apellido = reader.GetString(3);
-                            ActiveUser.Posicion = reader.GetInt32(4);
-                            ActiveUser.Email = reader.GetString(5);
+                            ActiveUser.Password = reader.GetString(2);
+                            ActiveUser.Nombre = reader.GetString(3);
+                            ActiveUser.Apellido = reader.GetString(4);
+                            ActiveUser.Genero = reader.GetInt32(5);
+                            ActiveUser.Rol = reader.GetInt32(6);
+                            ActiveUser.Cedula = reader.GetString(7);
+                            ActiveUser.Ciudad = reader.GetString(8);
+                            ActiveUser.Nacimiento = reader.GetDateTime(9);
+                            ActiveUser.Telefono = reader.GetString(10);
                         }
                         return true;
                     }

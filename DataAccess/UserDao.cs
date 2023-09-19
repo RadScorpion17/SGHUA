@@ -5,13 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Common.Cache;
 using System.Data;
-using System.Data.SqlClient;
 using Npgsql;
 
 namespace DataAccess
 {
-    //Data access object encargada de separar las clase abstracta del modelo y la conexión a la BD
-    //Reutilizable
+    //DAO = Data access object encargada de acceder a los datos de las tablas de la bd
+    //Abstraer en el modelo y acceder a sus métodos
     public class UserDao : Connection
     {
         public bool Login(string user, string password)
@@ -23,13 +22,13 @@ namespace DataAccess
                 {
                     command.Connection = connection;
                     command.CommandText = "SELECT * FROM usuarios WHERE username=@user AND password=@pass";
-                    command.Parameters.AddWithValue("@user",user);
-                    command.Parameters.AddWithValue("@pass",password);
+                    command.Parameters.AddWithValue("@user", user);
+                    command.Parameters.AddWithValue("@pass", password);
                     command.CommandType = CommandType.Text;
                     NpgsqlDataReader reader = command.ExecuteReader();
                     if (reader.HasRows)
                     {
-                        while(reader.Read())
+                        while (reader.Read())
                         {
                             ActiveUser.IdUser = reader.GetInt32(0);
                             ActiveUser.UserName = reader.GetString(1);
@@ -48,6 +47,122 @@ namespace DataAccess
                     else
                     {
                         return false;
+                    }
+                }
+            }
+        }
+        //TODO crear clase conexion
+        public NpgsqlDataReader getUsersTable()
+        {
+            var connection = GetConnection();
+            connection.Open();
+            NpgsqlCommand command = new NpgsqlCommand();
+            command.Connection = connection;
+            command.CommandText = "SELECT * FROM usuarios";
+            command.CommandType = CommandType.Text;
+            NpgsqlDataReader reader = command.ExecuteReader();
+            return reader;
+        }
+
+        public bool Guardar(Usuario user)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new NpgsqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "INSERT INTO usuarios(nombre, apellido, cedula, telefono) VALUES (@nombre,@apellido,@cedula,@telefono)";
+                    command.Parameters.Add(new NpgsqlParameter("@nombre", user.Nombre));
+                    command.Parameters.Add(new NpgsqlParameter("@apellido", user.Apellido));
+                    command.Parameters.Add(new NpgsqlParameter("@cedula", user.Cedula));
+                    command.Parameters.Add(new NpgsqlParameter("@telefono", user.Telefono));
+                    command.CommandType = CommandType.Text;
+                    if (command.ExecuteNonQuery() < 1)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        public List<Usuario> Listar()
+        {
+            List<Usuario> olista = new List<Usuario>();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new NpgsqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT usuario_id, nombre, apellido, cedula, telefono FROM usuarios";
+                    command.CommandType = CommandType.Text;
+                    NpgsqlDataReader reader = command.ExecuteReader();
+                    while(reader.Read()) 
+                    {
+                        olista.Add(new Usuario()
+                        {
+                            IdUser = reader.GetInt32(0),
+                            Nombre = reader.GetString(1),
+                            Apellido = reader.GetString(2),
+                            Cedula = reader.GetString(3),
+                            Telefono = reader.GetString(4), 
+                        });  
+                    }
+                }
+            }
+            return olista;
+        }
+
+        public bool Editar(Usuario user)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new NpgsqlCommand())
+                {
+
+                    command.Connection = connection;
+                    command.CommandText = "UPDATE usuarios SET nombre=@nombre, apellido=@apellido, cedula=@cedula, telefono=@telefono WHERE usuario_id=@usuario_id";
+                    command.Parameters.Add(new NpgsqlParameter("@nombre", user.Nombre));
+                    command.Parameters.Add(new NpgsqlParameter("@apellido", user.Apellido));
+                    command.Parameters.Add(new NpgsqlParameter("@cedula", user.Cedula));
+                    command.Parameters.Add(new NpgsqlParameter("@telefono", user.Telefono));
+                    command.Parameters.Add(new NpgsqlParameter("@usuario_id", user.IdUser));
+                    command.CommandType = CommandType.Text;
+                    if(command.ExecuteNonQuery() < 1)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        public bool Eliminar(Usuario user)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new NpgsqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "DELETE FROM usuarios WHERE usuario_id=@usuario_id";
+                    command.Parameters.Add(new NpgsqlParameter("@usuario_id", user.IdUser));
+                    if (command.ExecuteNonQuery() < 1)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
                     }
                 }
             }

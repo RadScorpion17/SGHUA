@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             bindingSource1 = new BindingSource(components);
             dataGridView1 = new DataGridView();
             AgregarBtn = new Button();
@@ -49,24 +49,26 @@
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 7.20000029F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 192, 192);
-            dataGridViewCellStyle3.SelectionForeColor = Color.Gray;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 7.20000029F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 192, 192);
+            dataGridViewCellStyle1.SelectionForeColor = Color.Gray;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(630, 34);
+            dataGridView1.Location = new Point(535, 20);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 30;
-            dataGridView1.Size = new Size(1118, 657);
+            dataGridView1.Size = new Size(876, 463);
             dataGridView1.TabIndex = 0;
             // 
             // AgregarBtn
             // 
-            AgregarBtn.Location = new Point(68, 345);
+            AgregarBtn.Location = new Point(60, 259);
+            AgregarBtn.Margin = new Padding(3, 2, 3, 2);
             AgregarBtn.Name = "AgregarBtn";
-            AgregarBtn.Size = new Size(94, 29);
+            AgregarBtn.Size = new Size(82, 22);
             AgregarBtn.TabIndex = 1;
             AgregarBtn.Text = "Agregar";
             AgregarBtn.UseVisualStyleBackColor = true;
@@ -74,9 +76,10 @@
             // 
             // EditarBtn
             // 
-            EditarBtn.Location = new Point(188, 345);
+            EditarBtn.Location = new Point(164, 259);
+            EditarBtn.Margin = new Padding(3, 2, 3, 2);
             EditarBtn.Name = "EditarBtn";
-            EditarBtn.Size = new Size(94, 29);
+            EditarBtn.Size = new Size(82, 22);
             EditarBtn.TabIndex = 2;
             EditarBtn.Text = "Editar";
             EditarBtn.UseVisualStyleBackColor = true;
@@ -84,9 +87,10 @@
             // 
             // LimpiarBtn
             // 
-            LimpiarBtn.Location = new Point(307, 345);
+            LimpiarBtn.Location = new Point(269, 259);
+            LimpiarBtn.Margin = new Padding(3, 2, 3, 2);
             LimpiarBtn.Name = "LimpiarBtn";
-            LimpiarBtn.Size = new Size(94, 29);
+            LimpiarBtn.Size = new Size(82, 22);
             LimpiarBtn.TabIndex = 3;
             LimpiarBtn.Text = "Limpiar";
             LimpiarBtn.UseVisualStyleBackColor = true;
@@ -94,59 +98,65 @@
             // 
             // txtidusuario
             // 
-            txtidusuario.Location = new Point(69, 132);
+            txtidusuario.Location = new Point(60, 99);
+            txtidusuario.Margin = new Padding(3, 2, 3, 2);
             txtidusuario.Name = "txtidusuario";
             txtidusuario.PlaceholderText = "Id Usuario";
-            txtidusuario.Size = new Size(125, 27);
+            txtidusuario.Size = new Size(110, 23);
             txtidusuario.TabIndex = 4;
             txtidusuario.TextChanged += textBox1_TextChanged;
             // 
             // txtnombre
             // 
-            txtnombre.Location = new Point(69, 191);
+            txtnombre.Location = new Point(60, 143);
+            txtnombre.Margin = new Padding(3, 2, 3, 2);
             txtnombre.Name = "txtnombre";
             txtnombre.PlaceholderText = "Nombre";
-            txtnombre.Size = new Size(125, 27);
+            txtnombre.Size = new Size(110, 23);
             txtnombre.TabIndex = 5;
             // 
             // txtapellido
             // 
-            txtapellido.Location = new Point(239, 191);
+            txtapellido.Location = new Point(209, 143);
+            txtapellido.Margin = new Padding(3, 2, 3, 2);
             txtapellido.Name = "txtapellido";
             txtapellido.PlaceholderText = "Apellido";
-            txtapellido.Size = new Size(125, 27);
+            txtapellido.Size = new Size(110, 23);
             txtapellido.TabIndex = 6;
             // 
             // txtcedula
             // 
-            txtcedula.Location = new Point(239, 255);
+            txtcedula.Location = new Point(209, 191);
+            txtcedula.Margin = new Padding(3, 2, 3, 2);
             txtcedula.Name = "txtcedula";
             txtcedula.PlaceholderText = "Cedula";
-            txtcedula.Size = new Size(125, 27);
+            txtcedula.Size = new Size(110, 23);
             txtcedula.TabIndex = 7;
             // 
             // txttelefono
             // 
-            txttelefono.Location = new Point(69, 255);
+            txttelefono.Location = new Point(60, 191);
+            txttelefono.Margin = new Padding(3, 2, 3, 2);
             txttelefono.Name = "txttelefono";
             txttelefono.PlaceholderText = "Telefono";
-            txttelefono.Size = new Size(125, 27);
+            txttelefono.Size = new Size(110, 23);
             txttelefono.TabIndex = 8;
             // 
             // button1
             // 
-            button1.Location = new Point(438, 345);
+            button1.Location = new Point(383, 259);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(82, 22);
             button1.TabIndex = 9;
             button1.Text = "Eliminar";
             button1.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1778, 723);
+            ClientSize = new Size(1434, 542);
             Controls.Add(button1);
             Controls.Add(txttelefono);
             Controls.Add(txtcedula);
@@ -157,6 +167,7 @@
             Controls.Add(EditarBtn);
             Controls.Add(AgregarBtn);
             Controls.Add(dataGridView1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "MainForm";
             StartPosition = FormStartPosition.Manual;
             Text = "Admin";

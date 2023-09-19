@@ -109,18 +109,22 @@ namespace DataAccess
                 using (var command = new NpgsqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT usuario_id, nombre, apellido, cedula, telefono FROM usuarios";
+                    command.CommandText = "SELECT usuario_id, nombre, apellido,genero,rol,cedula,ciudad,nacimiento,telefono FROM usuarios";
                     command.CommandType = CommandType.Text;
                     NpgsqlDataReader reader = command.ExecuteReader();
                     while(reader.Read()) 
                     {
                         olista.Add(new Usuario()
                         {
-                            IdUser = reader.GetInt32(0),
-                            Nombre = reader.GetString(1),
-                            Apellido = reader.GetString(2),
-                            Cedula = reader.GetString(3),
-                            Telefono = reader.GetString(4), 
+                             IdUser = reader.GetInt32(0),
+                             Nombre = reader.GetString(1),
+                             Apellido = reader.GetString(2),
+                             Genero = reader.GetInt32(3),
+                             Rol = reader.GetInt32(4),
+                             Cedula = reader.GetString(5),
+                             Ciudad = reader.GetString(6),
+                             Nacimiento = reader.GetDateTime(7),
+                             Telefono = reader.GetString(8), 
                         });  
                     }
                 }

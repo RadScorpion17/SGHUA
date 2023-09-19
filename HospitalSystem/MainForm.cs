@@ -69,8 +69,8 @@ namespace HospitalSystem
             if (metod.guardar(user))
             {
                 limpiar();
-                mostrarUsuarios(); 
-            }    
+                mostrarUsuarios();
+            }
 
         }
 
@@ -93,8 +93,10 @@ namespace HospitalSystem
             if (metod.editar(user))
             {
                 limpiar();
-                mostrarUsuarios();  
+                mostrarUsuarios();
             }
         }
+
+     
     }
 }

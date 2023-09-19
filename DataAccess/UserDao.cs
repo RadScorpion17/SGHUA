@@ -137,21 +137,24 @@ namespace DataAccess
             return olista;
         }
 
-        public bool Editar(Usuario user)
+                public bool Editar(Usuario user)
         {
             using (var connection = GetConnection())
             {
                 connection.Open();
                 using (var command = new NpgsqlCommand())
                 {
-
                     command.Connection = connection;
-                    command.CommandText = "UPDATE usuarios SET nombre=@nombre, apellido=@apellido, cedula=@cedula, telefono=@telefono WHERE usuario_id=@usuario_id";
+                    command.CommandText = "UPDATE usuarios SET nombre=@nombre, apellido=@apellido, cedula=@cedula, telefono=@telefono, genero=@genero, rol=@rol, cedula=@cedula, telefono=@telefono, nacimiento=@nacimiento, ciudad=@ciudad WHERE usuario_id=@usuario_id";
+                    command.Parameters.Add(new NpgsqlParameter("@usuario_id", user.IdUser));
                     command.Parameters.Add(new NpgsqlParameter("@nombre", user.Nombre));
                     command.Parameters.Add(new NpgsqlParameter("@apellido", user.Apellido));
+                    command.Parameters.Add(new NpgsqlParameter("@genero", user.Genero));
+                    command.Parameters.Add(new NpgsqlParameter("@rol", user.Rol));
                     command.Parameters.Add(new NpgsqlParameter("@cedula", user.Cedula));
                     command.Parameters.Add(new NpgsqlParameter("@telefono", user.Telefono));
-                    command.Parameters.Add(new NpgsqlParameter("@usuario_id", user.IdUser));
+                    command.Parameters.Add(new NpgsqlParameter("@nacimiento", user.Nacimiento));
+                    command.Parameters.Add(new NpgsqlParameter("@ciudad", user.Ciudad));
                     command.CommandType = CommandType.Text;
                     if(command.ExecuteNonQuery() < 1)
                     {

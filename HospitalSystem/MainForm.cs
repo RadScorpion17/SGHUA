@@ -31,5 +31,70 @@ namespace HospitalSystem
         {
             mostrarUsuarios();
         }
+
+        private void EliminarBtn_Click(object sender, EventArgs e)
+        {
+            Usuario user = new Usuario()
+            {
+                IdUser = int.Parse(txtidusuario.Text),
+            };
+            UserModel metod = new UserModel();
+            if (metod.eliminar(user))
+            {
+                limpiar();
+                mostrarUsuarios();
+            }
+        }
+
+        private void limpiar()
+        {
+            txtidusuario.Text = "";
+            txtnombre.Text = "";
+            txtapellido.Text = "";
+            txtcedula.Text = "";
+            txttelefono.Text = "";
+            txtnombre.Focus();
+        }
+
+        private void AgregarBtn_Click(object sender, EventArgs e)
+        {
+            Usuario user = new Usuario()
+            {
+                Nombre = txtnombre.Text,
+                Apellido = txtapellido.Text,
+                Cedula = txtcedula.Text,
+                Telefono = txttelefono.Text,
+            };
+            UserModel metod = new UserModel();
+            if (metod.guardar(user))
+            {
+                limpiar();
+                mostrarUsuarios(); 
+            }    
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditarBtn_Click(object sender, EventArgs e)
+        {
+            Usuario user = new Usuario()
+            {
+                IdUser = int.Parse(txtidusuario.Text),
+                Nombre = txtnombre.Text,
+                Apellido = txtapellido.Text,
+                Cedula = txtcedula.Text,
+                Telefono = txttelefono.Text,
+            };
+            UserModel metod = new UserModel();
+            if (metod.editar(user))
+            {
+                limpiar();
+                mostrarUsuarios();  
+            }
+        }
     }
 }

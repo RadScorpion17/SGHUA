@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -53,6 +53,10 @@ namespace HospitalSystem
             txtapellido.Text = "";
             txtcedula.Text = "";
             txttelefono.Text = "";
+            txtrol.Text = "";
+            txtgenero.Text = "";
+            txtciudad.Text = "";
+            txtnacimiento.Text = "";
             txtnombre.Focus();
         }
 
@@ -60,10 +64,15 @@ namespace HospitalSystem
         {
             Usuario user = new Usuario()
             {
+                IdUser = Convert.ToInt32(txtidusuario.Text),
                 Nombre = txtnombre.Text,
                 Apellido = txtapellido.Text,
+                Genero = Convert.ToInt32(txtgenero.Text),
+                Rol = Convert.ToInt32(txtrol.Text),
                 Cedula = txtcedula.Text,
                 Telefono = txttelefono.Text,
+                Nacimiento = Convert.ToDateTime(txtnacimiento.Text),
+                Ciudad = txtciudad.Text,
             };
             UserModel metod = new UserModel();
             if (metod.guardar(user))
@@ -83,11 +92,15 @@ namespace HospitalSystem
         {
             Usuario user = new Usuario()
             {
-                IdUser = int.Parse(txtidusuario.Text),
+                IdUser = Convert.ToInt32(txtidusuario.Text),
                 Nombre = txtnombre.Text,
                 Apellido = txtapellido.Text,
+                Genero = Convert.ToInt32(txtgenero.Text),
+                Rol = Convert.ToInt32(txtrol.Text),
                 Cedula = txtcedula.Text,
                 Telefono = txttelefono.Text,
+                Nacimiento = Convert.ToDateTime(txtnacimiento.Text),
+                Ciudad = txtciudad.Text,
             };
             UserModel metod = new UserModel();
             if (metod.editar(user))
@@ -97,6 +110,9 @@ namespace HospitalSystem
             }
         }
 
+        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

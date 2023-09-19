@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -82,11 +82,16 @@ namespace DataAccess
                 using (var command = new NpgsqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "INSERT INTO usuarios(nombre, apellido, cedula, telefono) VALUES (@nombre,@apellido,@cedula,@telefono)";
+                    command.CommandText = "INSERT INTO usuarios(usuario_id,nombre,apellido,genero,rol,cedula,telefono,nacimiento,ciudad) VALUES (@id,@nombre,@apellido,@genero,@rol,@cedula,@telefono,@nacimiento,@ciudad)";
+                    command.Parameters.Add(new NpgsqlParameter("@id", user.IdUser));
                     command.Parameters.Add(new NpgsqlParameter("@nombre", user.Nombre));
                     command.Parameters.Add(new NpgsqlParameter("@apellido", user.Apellido));
+                    command.Parameters.Add(new NpgsqlParameter("@genero", user.Genero));
+                    command.Parameters.Add(new NpgsqlParameter("@rol", user.Rol));
                     command.Parameters.Add(new NpgsqlParameter("@cedula", user.Cedula));
                     command.Parameters.Add(new NpgsqlParameter("@telefono", user.Telefono));
+                    command.Parameters.Add(new NpgsqlParameter("@nacimiento", user.Nacimiento));
+                    command.Parameters.Add(new NpgsqlParameter("@ciudad", user.Ciudad));
                     command.CommandType = CommandType.Text;
                     if (command.ExecuteNonQuery() < 1)
                     {
@@ -109,22 +114,22 @@ namespace DataAccess
                 using (var command = new NpgsqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT usuario_id, nombre, apellido,genero,rol,cedula,ciudad,nacimiento,telefono FROM usuarios";
+                    command.CommandText = "SELECT usuario_id,nombre,apellido,genero,rol,cedula,ciudad,nacimiento,telefono FROM usuarios";
                     command.CommandType = CommandType.Text;
                     NpgsqlDataReader reader = command.ExecuteReader();
                     while(reader.Read()) 
                     {
                         olista.Add(new Usuario()
                         {
-                             IdUser = reader.GetInt32(0),
-                             Nombre = reader.GetString(1),
-                             Apellido = reader.GetString(2),
-                             Genero = reader.GetInt32(3),
-                             Rol = reader.GetInt32(4),
-                             Cedula = reader.GetString(5),
-                             Ciudad = reader.GetString(6),
-                             Nacimiento = reader.GetDateTime(7),
-                             Telefono = reader.GetString(8), 
+                            IdUser = reader.GetInt32(0),
+                            Nombre = reader.GetString(1),
+                            Apellido = reader.GetString(2),
+                            Genero = reader.GetInt32(3),
+                            Rol = reader.GetInt32(4),
+                            Cedula = reader.GetString(5),
+                            Ciudad = reader.GetString(6),
+                            Nacimiento = reader.GetDateTime(7),
+                            Telefono = reader.GetString(8), 
                         });  
                     }
                 }

@@ -31,15 +31,25 @@ namespace DataAccess
                         while (reader.Read())
                         {
                             ActiveUser.IdUser = reader.GetInt32(0);
+                            
                             ActiveUser.UserName = reader.GetString(1);
+                            
                             ActiveUser.Password = reader.GetString(2);
+                            
                             ActiveUser.Nombre = reader.GetString(3);
+                            
                             ActiveUser.Apellido = reader.GetString(4);
+                            
                             ActiveUser.Genero = reader.GetInt32(5);
+                            
                             ActiveUser.Rol = reader.GetInt32(6);
+                            
                             ActiveUser.Cedula = reader.GetString(7);
+                            
                             ActiveUser.Ciudad = reader.GetString(8);
+                            
                             ActiveUser.Nacimiento = reader.GetDateTime(9);
+                            
                             ActiveUser.Telefono = reader.GetString(10);
                         }
                         return true;
